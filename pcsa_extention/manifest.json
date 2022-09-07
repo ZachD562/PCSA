@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "PCSA",
+    "description": "This extension aims to help improve your password complexity and strength automatically and completely for free!",
+    "version": "1.0.0",
+    "icons": {
+        "128": "icons/icon_128.png"
+    },
+    "action": {
+        "default_icon": "icons/icon_19.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "service_worker.js"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://*/*",
+            "http://*/*"
+        ],
+        "js": ["jquery-3.6.0.js", "content.js"]
+    }],
+    "permissions": [
+        "clipboardWrite"
+    ]
+}
